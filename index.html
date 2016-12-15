@@ -4,23 +4,22 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,max-scale=1,user-scalable=no">
 <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <!-- 基本导航组件和响应式   -->
 <nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
-      <a href="#" class="navbar-brand"  style="margin:0;padding:0;"><img src="img/logo.png" alt="企业的logo"></a>
+      <a href="#" class="navbar-brand logo"  ><img src="img/logo.png" alt="企业的logo"></a>
       <button class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
     </div>
-    <div class="collapse navbar-collapse" id="navbar-collapse">
-      
-   
-    <ul class="nav navbar-nav navbar-right" style="margin-top:0;">
+    <div class="collapse navbar-collapse" id="navbar-collapse">  
+    <ul class="nav navbar-nav navbar-right" > 
       <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
       <li><a href="#"><span class="glyphicon glyphicon-list"></span> 资讯</a></li>
       <li><a href="#"><span class="glyphicon glyphicon-fire"></span>   案例</a></li>
@@ -29,9 +28,45 @@
   </div>
 </nav>
 
+<!-- 响应式轮播图 -->
+<div class="carousel slide" id="myCarousel">
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+  <div class="item active" style="background:#223240">
+    <img src="img/slide1.png" alt="第一张">
+  </div>
+  <div class="item" style="background:#F5E5DD">
+    <img src="img/slide2.png" alt="第二张">
+  </div>
+  <div class="item" style="background:#DE292E">
+    <img src="img/slide3.png" alt="第三张">
+  </div>
+  </div>
+  <a href="#myCarousel" data-slide="prev" class="carousel-control left">&lsaquo;</a>
+  <a href="#myCarousel" data-slide="next" class="carousel-control right">&rsaquo;</a>
+</div>
 <script src="dist/js/jquery-3.1.1.js"></script>
 <script src="dist/js/bootstrap.min.js"></script>
 <script>
+ $(function(){
+  //设置两个箭头垂直居中
+$(".carousel-control").css('line-height',
+ $('.carousel-inner img').height()+'px');
+$(window).resize(function(){
+  //给每个图片都添加‘高度’
+  var $height=$('.carousel-inner img').eq(0).height()||$('.carousel-inner img').eq(1).height()||$('.carousel-inner img').eq(2).height();
+  $(".carousel-control").css('line-height',
+$height+'px');
+})
+});
+
+$("#myCarousel").carousel({
+  interval:3000
+});
 
 </script>
 </body>
