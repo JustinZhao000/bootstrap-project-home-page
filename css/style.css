@@ -8,9 +8,9 @@ body {
 	padding:0;
 }
 #myCaousel{
-	margin:50px 0 0;
+	margin:50px 0 0 0;
 }
-#navbar-collapse{
+#navbar-collapse ul{
 	margin-top:0;
 }
 .carousel img{
@@ -56,9 +56,10 @@ body {
 }
 /*information页*/
 .jumbotron{
-	background-image: url(../img/bg.jpg);
+	background:#ccc url(../img/bg.jpg);
 	color:#ccc;
 	margin:50px 0 0 0;
+	padding:60px 0;
 }
 .jumbotron h1{
 	font-size:26px;
