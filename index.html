@@ -21,9 +21,9 @@
     <div class="collapse navbar-collapse" id="navbar-collapse">  
     <ul class="nav navbar-nav navbar-right" > 
       <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-list"></span> 资讯</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-fire"></span>   案例</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-question-sign"></span> 关于</a></li>
+      <li><a href="information.html"><span class="glyphicon glyphicon-list"></span> 资讯</a></li>
+      <li><a href="case.html"><span class="glyphicon glyphicon-fire"></span>   案例</a></li>
+      <li><a href="about.html"><span class="glyphicon glyphicon-question-sign"></span> 关于</a></li>
     </ul>
   </div>
 </nav>
@@ -148,10 +148,10 @@
     <p>苏ICP 备12345678. © 2009-2016 瓢城企训网. Powered by Bootstrap.</p>
   </div>
 </footer>
-<script src="dist/js/jquery-3.1.1.js"></script>
+<script src="dist/js/jquery.min.js"></script>
 <script src="dist/js/bootstrap.min.js"></script>
-<script>
- $(function(){
+<script type="text/javascript">
+ // $(function(){
   //设置两个箭头垂直居中
  // $(".carousel-control").css('line-height',
  // $('.carousel-inner img').height()+'px');
@@ -169,19 +169,35 @@ $("#myCarousel").carousel({
 });
 
 // tab2, tab3设置文字垂直居中
-
-
-$('.text').eq(0).css('margin-top',($('.auto').eq(0).height()-$('.text').eq(0).height())/2+'px');
+// 谷歌浏览器加载图片的顺序问题，导致高度获取不到
+// $(window).load(function(){
+// $('.text').eq(0).css('margin-top',($('.auto').eq(0).height()-$('.text').eq(0).height())/2+'px');
+// });
+$(window).load(function () {
+    $('.text').eq(0).css('margin-top', ($('.auto').eq(0).height() - $('.text').eq(0).height()) / 2 + 'px');
+  });
 $(window).resize(function(){
   $('.text').eq(0).css('margin-top',($('.auto').eq(0).height()-$('.text').eq(0).height())/2+'px');
 });
 
+$(window).load(function(){
+  $('.text').eq(1).css('margin-top',($('.auto').eq(1).height()-$('.text').eq(1).height())/2+'px');
+});
 
-$('.text').eq(1).css('margin-top',($('.auto').eq(1).height()-$('.text').eq(1).height())/2+'px');
 $(window).resize(function(){
   $('.text').eq(1).css('margin-top',($('.auto').eq(1).height()-$('.text').eq(1).height())/2+'px');
 });
-});
+// });
+// $(document).ready(function(){
+// ...
+// });
+// 这个时候，不一定要等所有的js和图片加载完毕，就可以执行一些方法，不过有些时候，必须要等所有的js和图片都加载完
+// 需要用到:
+
+// $(window).load(function() {
+
+// });
+
 </script>
 </body>
 </html>
