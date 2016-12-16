@@ -110,6 +110,16 @@ body {
 	padding:8px 0 0 0;
 }
 /*information页*/
+/*case页*/
+#case{
+	padding:40px 0;
+	background: #eee;
+	text-align: center;
+}
+#case h4,#case p{
+    color:#666;
+    line-height: 1.6;
+}
 /*小屏幕（平板，大于等于768px)*/
 @media(min-width: 768px){
 .tab-h2{
